@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Калькулятор</h1>
+<form method="post" action="/calc">
+    <input id="variable" name="variable" type="number" step="any" placeholder="a">
+
+    <select name="operation" id="operation">
+        <option value="+" selected> + </option>
+        <option value="-"> - </option>
+        <option value="*"> * </option>
+        <option value="/"> / </option>
+    </select>
+
+    <input id="variable2" name="variable2" type="number" step="any" placeholder="b">
+    <input type="submit" name="submit" value="post">
+</form>
+
+<form method="get" action="/calc">
+    <input id="variable_1" name="variable" type="number" step="any" placeholder="a">
+
+    <select name="operation" id="operation_">
+        <option value="+" selected> + </option>
+        <option value="-"> - </option>
+        <option value="*"> * </option>
+        <option value="/"> / </option>
+    </select>
+
+    <input id="variable_2" name="variable2" type="number" step="any" placeholder="b">
+    <input type="submit" name="submit" value="get">
+</form>
+
+<p th:text="${first} +' '+ ${operation}+' '+ ${second} +' = ' + ${answer}"/>
+</body>
+</html>
